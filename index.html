@@ -46,6 +46,11 @@
         outline: none;
         box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #fff;
       }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+      }
     </style>
   </head>
   <body>
@@ -55,11 +60,13 @@
       method="GET"
       role="search"
     >
+      <label for="enInput" class="overlay"></label>
       <input
         placeholder="Google search in En"
         class="form__input"
         type="text"
         name="q"
+        id="enInput"
       />
 
       <div id="tophf">
