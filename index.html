@@ -20,11 +20,6 @@
       }
       body {
         min-height: 100vh;
-        display: flex;
-        gap: 2rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         font-family: 'Poppins', sans-serif;
       }
       .form__input {
@@ -50,46 +45,52 @@
         position: fixed;
         inset: 0;
         z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-direction: column;
       }
     </style>
   </head>
   <body>
-    <form
-      class="form"
-      action="https://www.google.com/search"
-      method="GET"
-      role="search"
-    >
-      <label for="enInput" class="overlay"></label>
-      <input
-        placeholder="Google search in English"
-        class="form__input"
-        type="text"
-        name="q"
-        id="enInput"
-      />
-
-      <div id="tophf">
-        <input name="gl" value="us" type="hidden" /><input
-          name="hl"
-          value="en"
-          type="hidden"
+    <label for="enInput" class="overlay">
+      <form
+        class="form"
+        action="https://www.google.com/search"
+        method="GET"
+        role="search"
+      >
+        <input
+          placeholder="Google search in English"
+          class="form__input"
+          type="text"
+          name="q"
+          id="enInput"
         />
-      </div>
-    </form>
 
-    <form
-      class="form"
-      action="https://www.google.com/search"
-      method="GET"
-      role="search"
-    >
-      <input
-        placeholder="Google search in Native Language"
-        class="form__input"
-        type="text"
-        name="q"
-      />
-    </form>
+        <div id="tophf">
+          <input name="gl" value="us" type="hidden" /><input
+            name="hl"
+            value="en"
+            type="hidden"
+          />
+        </div>
+      </form>
+
+      <form
+        class="form"
+        action="https://www.google.com/search"
+        method="GET"
+        role="search"
+      >
+        <input
+          placeholder="Google search in Native Language"
+          class="form__input"
+          type="text"
+          name="q"
+        />
+      </form>
+    </label>
   </body>
 </html>
