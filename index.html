@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>google</title>
     <style>
+      :root {
+        --cBackGround: hsl(215, 46%, 93%);
+        --cShadow: inset 0.2rem 0.2rem 0.5rem hsl(225, 39%, 85%),
+          inset -0.2rem -0.2rem 0.5rem hsl(0, 0%, 100%);
+        --cFocus: 0.3rem 0.3rem 0.6rem hsl (225, 39%, 85%),
+          -0.2rem -0.2rem 0.5rem hsl(0, 0%, 100%);
+        --cText: hsl(223, 35%, 71%);
+        --cPlaceholder: hsl(224, 41%, 82%);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --cBackGround: hsl(215, 46%, calc(110% - 93%));
+          --cShadow: inset 0.2rem 0.2rem 0.5rem hsl(0, 0%, calc(110% - 100%)),
+            inset -0.2rem -0.2rem 0.5rem hsl(225, 39%, calc(110% - 85%));
+          --cFocus: 0.3rem 0.3rem 0.6rem hsl(0, 0%, calc(110% - 100%)),
+            -0.2rem -0.2rem 0.5rem hsl(225, 39%, calc(110% - 85%));
+          --cText: hsl(223, 35%, calc(120% - 71%));
+          --cPlaceholder: hsl(224, 41%, calc(120% - 82%));
+        }
+      }
       *,
       *::before,
       *::after {
@@ -16,11 +36,11 @@
         box-sizing: border-box;
         font-size: 62.5%;
         overflow-y: hidden;
-        background: #e4ebf5;
+        background: var(--cBackGround);
       }
       body {
         min-height: 100vh;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
       .form__input {
         width: 40rem;
@@ -29,17 +49,16 @@
         border-radius: 1rem;
         font-size: 1.6rem;
         padding-inline: 1.6rem;
-        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
-          inset -0.2rem -0.2rem 0.5rem #fff;
+        box-shadow: var(--cShadow);
         background: none;
-        color: #9baacf;
+        color: var(--cText);
       }
       .form__input::placeholder {
-        color: #bec8e4;
+        color: var(--cPlaceholder);
       }
       .form__input:focus {
         outline: none;
-        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #fff;
+        box-shadow: var(--cFocus) !important;
       }
       .overlay {
         position: fixed;
