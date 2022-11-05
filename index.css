@@ -22,6 +22,7 @@
   --cText: hsl(223, 35%, calc(120% - 71%));
   --cPlaceholder: hsl(224, 41%, calc(120% - 82%));
 }
+
 *,
 *::before,
 *::after {
